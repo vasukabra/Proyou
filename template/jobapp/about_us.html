@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About Us
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="home-section section-hero inner-page overlay bg-image" 
+         style="background-image: url({% static 'images/hero_4.jpg' %});" id="home-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="mb-5">
+                    <h1 class="text-white font-weight-bold">About <span class="text-primary">Us</span></h1>
+                    <p class="text-white">Your trusted partner in job search and career growth</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content Section -->
+<section class="site-section" id="next-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="p-4 mb-3 bg-white">
+                    <h4 class="font-weight-bold">Our Mission</h4>
+                    <p>We are dedicated to connecting talented professionals with their dream careers. Our platform serves as a bridge between job seekers and employers, making the hiring process seamless and efficient.</p>
+
+                    <h4 class="font-weight-bold mt-5">What We Offer</h4>
+                    <ul class="list-unstyled">
+                        <li>Easy job search and application process</li>
+                        <li>Professional resume builder</li>
+                        <li>Direct communication with employers</li>
+                        <li>Career growth resources</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 ml-auto">
+                <!-- Optional imagery or additional info -->
+                <img src="{% static 'images/about_us.jpg' %}" alt="About Us" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
