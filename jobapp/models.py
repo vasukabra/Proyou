@@ -22,7 +22,7 @@ JOB_TYPE = (
 )
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.name
@@ -36,23 +36,24 @@ class Job(models.Model):
     tags = TaggableManager()
     location = models.CharField(max_length=300)
     job_type = models.CharField(choices=JOB_TYPE, max_length=1)
-    category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE, blank=True, null=True)
     salary = models.CharField(max_length=30, blank=True)
     company_name = models.CharField(max_length=300)
     company_description = RichTextField(blank=True, null=True)
-    url = models.URLField(max_length=200)
-    last_date = models.DateField()
+    url = models.URLField(max_length=200, null=True )
+    last_date = models.DateField(null=True)
     is_published = models.BooleanField(default=False)
     is_closed = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=True)
     Vacancy = models.CharField(max_length=10, null=True)
     Experience = models.CharField(max_length=30, blank=True)
-    gender = models.CharField(max_length=30)
-    passedout = models.CharField(max_length=30)
+    gender = models.CharField(max_length=30, null=True, default='Male')
+    passedout = models.CharField(max_length=30, null=True)
     
 
     def __str__(self):
         return self.title
+
 
  
 

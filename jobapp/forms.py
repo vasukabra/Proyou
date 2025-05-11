@@ -22,6 +22,8 @@ class ContactForm(forms.ModelForm):
     
     
 
+
+
 class JobForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
@@ -119,6 +121,7 @@ class JobForm(forms.ModelForm):
             "url"
             ]
 
+
     def clean_job_type(self):
         job_type = self.cleaned_data.get('job_type')
 
@@ -142,8 +145,6 @@ class JobForm(forms.ModelForm):
         return job
 
 
-
-
 class JobApplyForm(forms.ModelForm):
     class Meta:
         model = Applicant
@@ -153,8 +154,6 @@ class JobBookmarkForm(forms.ModelForm):
     class Meta:
         model = BookmarkJob
         fields = ['job']
-
-
 
 
 class JobEditForm(forms.ModelForm):
@@ -279,4 +278,3 @@ class JobEditForm(forms.ModelForm):
         if commit:
             job.save()
         return job
-

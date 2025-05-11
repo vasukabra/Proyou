@@ -182,6 +182,18 @@
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
             transform: scale(1); }
+            .company-card {
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+              border: 1px solid #e0e0e0;
+          }
+          
+          .company-card:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+              border-color: #d0d0d0;
+              background-color: #fdfdfd;
+          }
+          
 
 .site-mobile-menu {
   width: 300px;
@@ -832,6 +844,14 @@ h1, h2, h3, h4 {
 .section-title-sub {
   font-size: 1rem;
   color: #ced4da; }
+
+.custom-hero-section {
+  height: 100px; /* Set to whatever height you want */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
 
 .section-hero, .section-hero > .container > .row {
   height: 100vh;

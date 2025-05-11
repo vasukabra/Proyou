@@ -21,7 +21,7 @@ User = get_user_model()
 
 def home_view(request):
 
-    published_jobs = Job.objects.filter(is_published=True).order_by('-timestamp')
+    published_jobs = Job.objects.filter(is_published=True).order_by('id')
     jobs = published_jobs.filter(is_closed=False)
     total_candidates = User.objects.filter(role='employee').count()
     total_companies = User.objects.filter(role='employer').count()
@@ -69,7 +69,7 @@ def job_list_View(request):
     """
 
     """
-    job_list = Job.objects.order_by('-timestamp')
+    job_list = Job.objects.order_by('id')
     paginator = Paginator(job_list, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -114,6 +114,13 @@ def create_job_View(request):
     }
     return render(request, 'jobapp/post-job.html', context)
 
+def home(request):
+    companies = [
+        "TCS", "Infosys", "Wipro", "Tech Mahindra", "Cognizant", "Capgemini", "Amazon"
+    ]
+    return render(request, 'jobapp/home.html', {'companies': companies})
+
+
 
 def single_job_view(request, id):
     """
@@ -145,7 +152,7 @@ def search_result_view(request):
 
     """
 
-    job_list = Job.objects.order_by('-timestamp')
+    job_list = Job.objects.order_by('id')
 
     # Keywords
     if 'job_title_or_company_name' in request.GET:

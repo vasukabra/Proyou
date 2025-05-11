@@ -11,7 +11,7 @@ admin.site.register(Applicant,ApplicantAdmin)
 
 
 class JobAdmin(admin.ModelAdmin):
-    list_display = ('title','category','job_type','timestamp')
+    list_display = ('title', 'location', 'company_name', 'salary')
 
 admin.site.register(Job,JobAdmin)
 

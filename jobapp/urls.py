@@ -7,7 +7,7 @@ app_name = "jobapp"
 
 urlpatterns = [
 
-    path('', views.home_view, name='home'),
+    path('index', views.home_view, name='index'),
     path('jobs/', views.job_list_View, name='job-list'),
     path('job/create/', views.create_job_View, name='create-job'),
     path('job/<int:id>/', views.single_job_view, name='single-job'),
@@ -23,6 +23,6 @@ urlpatterns = [
     path('dashboard/employer/close/<int:id>/', views.make_complete_job_view, name='complete'),
     path('dashboard/employer/delete/<int:id>/', views.delete_job_view, name='delete'),
     path('dashboard/employee/delete-bookmark/<int:id>/', views.delete_bookmark_view, name='delete-bookmark'),
-
+    path('', views.home, name='home'),
 
 ]
