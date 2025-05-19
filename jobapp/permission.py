@@ -12,7 +12,6 @@ def user_is_employer(function):
     return wrap
 
 
-
 def user_is_employee(function):
 
     def wrap(request, *args, **kwargs):    

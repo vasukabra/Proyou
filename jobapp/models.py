@@ -55,8 +55,6 @@ class Job(models.Model):
         return self.title
 
 
- 
-
 class Applicant(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
